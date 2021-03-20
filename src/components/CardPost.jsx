@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {API_URL} from "../config";
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles({
     root: {
@@ -39,9 +40,11 @@ export default function CardPost({post}) {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
-                    Learn More
-                </Button>
+                <Link to={`/post/${post.id}`}>
+                    <Button size="small" color="primary">
+                       Learn more
+                    </Button>
+                </Link>
             </CardActions>
         </Card>
     );
